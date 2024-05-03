@@ -29,4 +29,9 @@ class FakeAuthenticationService extends AuthenticationService {
   Future<void> loginWithOtp(String email) async {
     _currentUserStream.add(_fakeUser);
   }
+
+  @override
+  Future<void> loginWithEmail(String email, String password) async {
+    _currentUserStream.add(_fakeUser);
+  }
 }

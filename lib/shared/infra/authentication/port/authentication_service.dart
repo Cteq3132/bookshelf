@@ -16,8 +16,11 @@ abstract class AuthenticationService extends Equatable {
   /// Logout
   Future<void> logout();
 
-  /// Login
+  /// Login with OTP
   Future<void> loginWithOtp(String email);
+
+  /// Login with email and password
+  Future<void> loginWithEmail(String email, String password);
 
   @override
   List<Object?> get props => [];

@@ -1,6 +1,6 @@
 import 'package:bookshelf/app/navigation/router.dart';
 import 'package:bookshelf/shared/env.dart';
-import 'package:bookshelf/shared/infra/authentication/adapters/fake_authentication_service.dart';
+import 'package:bookshelf/shared/infra/authentication/adapters/supabase_authentication_service.dart';
 import 'package:bookshelf/shared/infra/authentication/port/authentication_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -13,7 +13,7 @@ void main() async {
   );
 
   GetIt.instance.registerSingleton<AuthenticationService>(
-    FakeAuthenticationService(isLoggedIn: false),
+    SupabaseAuthenticationService(),
   );
 
   runApp(const MainApp());
