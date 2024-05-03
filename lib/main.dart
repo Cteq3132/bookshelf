@@ -1,6 +1,13 @@
+import 'package:bookshelf/shared/env.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
+void main() async {
+  await Supabase.initialize(
+    url: 'https://cnlcdtqtjdbipvatdqsa.supabase.co',
+    anonKey: Env.supabasePublicKey,
+  );
+
   runApp(const MainApp());
 }
 
