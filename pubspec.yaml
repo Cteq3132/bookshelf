@@ -8,9 +8,12 @@ environment:
 
 dependencies:
   envied_flutter: ^0.3.0+1
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
+  get_it: ^7.6.7
   go_router: ^14.0.2
+  signals_flutter: ^5.2.0
   supabase_flutter: ^2.5.2
 
 dev_dependencies:
