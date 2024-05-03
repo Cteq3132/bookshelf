@@ -1,12 +1,13 @@
 name: bookshelf
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.2.6 <4.0.0'
+  sdk: ">=3.2.6 <4.0.0"
 
 dependencies:
+  envied_flutter: ^0.3.0+1
   flutter:
     sdk: flutter
   supabase_flutter: ^2.5.2
@@ -15,6 +16,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  build_runner: ^2.4.9
+  envied_generator: ^0.5.4+1
 
 flutter:
   uses-material-design: true
