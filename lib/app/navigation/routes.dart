@@ -1,3 +1,4 @@
+import 'package:bookshelf/modules/book_search/view/book_search_view.dart';
 import 'package:bookshelf/modules/home/view/home_view.dart';
 import 'package:bookshelf/modules/login/view/login_view.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,15 @@ class HomeRoute extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) => const HomeView();
+}
+
+@TypedGoRoute<BookSearchRoute>(path: '/book_search')
+class BookSearchRoute extends GoRouteData {
+  const BookSearchRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const BookSearchView();
 }
 
 @TypedGoRoute<LoginRoute>(path: '/login')
