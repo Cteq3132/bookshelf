@@ -10,6 +10,7 @@ dependencies:
   envied_flutter: ^0.3.0+1
   flutter:
     sdk: flutter
+  go_router: ^14.0.2
   supabase_flutter: ^2.5.2
 
 dev_dependencies:
@@ -18,6 +19,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   build_runner: ^2.4.9
   envied_generator: ^0.5.4+1
+  go_router_builder: ^2.6.1
 
 flutter:
   uses-material-design: true

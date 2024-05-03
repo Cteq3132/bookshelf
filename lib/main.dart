@@ -1,3 +1,4 @@
+import 'package:bookshelf/app/navigation/router.dart';
 import 'package:bookshelf/shared/env.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -16,12 +17,18 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return RouterBuilder(
+      builder: (context, goRouter) {
+        return MaterialApp.router(
+          title: 'Bookshelf',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          routerDelegate: goRouter.routerDelegate,
+          routeInformationParser: goRouter.routeInformationParser,
+          routeInformationProvider: goRouter.routeInformationProvider,
+        );
+      },
     );
   }
 }
