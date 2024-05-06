@@ -2,6 +2,8 @@ import 'package:bookshelf/app/navigation/router.dart';
 import 'package:bookshelf/shared/env.dart';
 import 'package:bookshelf/shared/infra/authentication/adapters/supabase_authentication_service.dart';
 import 'package:bookshelf/shared/infra/authentication/port/authentication_service.dart';
+import 'package:bookshelf/shared/infra/books/adapters/google_books_repository.dart';
+import 'package:bookshelf/shared/infra/books/port/books_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -15,6 +17,7 @@ void main() async {
   GetIt.instance.registerSingleton<AuthenticationService>(
     SupabaseAuthenticationService(),
   );
+  GetIt.instance.registerSingleton<BooksRepository>(GoogleBooksRepository());
 
   runApp(const MainApp());
 }

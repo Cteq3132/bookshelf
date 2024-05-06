@@ -8,20 +8,25 @@ part of 'routes.dart';
 
 List<RouteBase> get $appRoutes => [
       $homeRoute,
-      $bookSearchRoute,
       $loginRoute,
     ];
 
 RouteBase get $homeRoute => GoRouteData.$route(
-      path: '/',
+      path: '/home',
       factory: $HomeRouteExtension._fromState,
+      routes: [
+        GoRouteData.$route(
+          path: 'book_search',
+          factory: $BookSearchRouteExtension._fromState,
+        ),
+      ],
     );
 
 extension $HomeRouteExtension on HomeRoute {
   static HomeRoute _fromState(GoRouterState state) => const HomeRoute();
 
   String get location => GoRouteData.$location(
-        '/',
+        '/home',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -34,17 +39,12 @@ extension $HomeRouteExtension on HomeRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-RouteBase get $bookSearchRoute => GoRouteData.$route(
-      path: '/book_search',
-      factory: $BookSearchRouteExtension._fromState,
-    );
-
 extension $BookSearchRouteExtension on BookSearchRoute {
   static BookSearchRoute _fromState(GoRouterState state) =>
       const BookSearchRoute();
 
   String get location => GoRouteData.$location(
-        '/book_search',
+        '/home/book_search',
       );
 
   void go(BuildContext context) => context.go(location);

@@ -6,7 +6,14 @@ import 'package:go_router/go_router.dart';
 
 part 'routes.g.dart';
 
-@TypedGoRoute<HomeRoute>(path: '/')
+@TypedGoRoute<HomeRoute>(
+  path: '/home',
+  routes: [
+    TypedGoRoute<BookSearchRoute>(
+      path: 'book_search',
+    )
+  ],
+)
 class HomeRoute extends GoRouteData {
   const HomeRoute();
 
@@ -14,7 +21,6 @@ class HomeRoute extends GoRouteData {
   Widget build(BuildContext context, GoRouterState state) => const HomeView();
 }
 
-@TypedGoRoute<BookSearchRoute>(path: '/book_search')
 class BookSearchRoute extends GoRouteData {
   const BookSearchRoute();
 

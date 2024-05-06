@@ -27,6 +27,11 @@ class _RouterBuilderState extends State<RouterBuilder> {
       if (!auth.isLoggedIn.value) {
         return const LoginRoute().location;
       }
+
+      if (state.uri.toString() == '/') {
+        return const HomeRoute().location;
+      }
+
       return null;
     },
   );
